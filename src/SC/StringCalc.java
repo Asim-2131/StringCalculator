@@ -79,7 +79,7 @@ public class StringCalc{
 	private static int additionOfString(String numbers[]) {
 		int val = 0;
 		for(int i=0;i<numbers.length;i++) {
-			val += (sToInt(numbers[i]));
+			val += ((int)sToInt(numbers[i]) <= (int)1000 ? sToInt(numbers[i]) : 0);
 		}
 		return val;
 	}

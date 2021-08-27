@@ -50,4 +50,11 @@ public class StringCalcTest {
 		assertEquals(8,StringCalc.Add("//[*%%][%]\n5*%%2%1"));
 	}
 	
+	@Test
+	public void returnAdditionOfNumbersAftersIgnoringGreaterThan1000() {
+		assertEquals(7,StringCalc.Add("//[***][%]\n5***2%1003"));
+	}
+	
+	
+	
 }
