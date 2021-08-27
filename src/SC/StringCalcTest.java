@@ -32,7 +32,22 @@ public class StringCalcTest {
 	}
 	
 	@Test
-	public void returnAdditionForDifferentDelemeters() {
+	public void returnAdditionForDifferentDelimiters() {
 		assertEquals(8,StringCalc.Add("//;\n1;3;4"));
+		assertEquals(8,StringCalc.Add("//%\n1%3%4"));
 	}
+	
+	@Test
+	public void returnAdditionForSingleSeparater() {
+		assertEquals(8,StringCalc.Add("//[**]\n5**2**1"));
+	}
+	
+	@Test
+	public void returnAdditionForMultipleSeparater() {
+		assertEquals(8,StringCalc.Add("//[***][%]\n5***2%1"));
+		assertEquals(8,StringCalc.Add("//[*][%]\n5*2%1"));
+		assertEquals(8,StringCalc.Add("//[*$*][%]\n5*$*2%1"));
+		assertEquals(8,StringCalc.Add("//[*%%][%]\n5*%%2%1"));
+	}
+	
 }
