@@ -55,6 +55,18 @@ public class StringCalcTest {
 		assertEquals(7,StringCalc.Add("//[***][%]\n5***2%1003"));
 	}
 	
+	@Test
+	public void exceptionOnNegativeNumber() {
+		try {
+			StringCalc.Add("-1,2,-3");
+			
+		}
+		catch(Exception ex) {
+			assertEquals("negative not allowed -1, -3",ex.getMessage());
+		}
+	}
+	
+	
 	
 	
 }

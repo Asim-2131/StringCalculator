@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+
 public class StringCalc{
 
 
@@ -78,13 +80,28 @@ public class StringCalc{
 	
 	private static int additionOfString(String numbers[]) {
 		int val = 0;
+		ArrayList<Integer> negative = new ArrayList<>();
 		for(int i=0;i<numbers.length;i++) {
-			val += ((int)sToInt(numbers[i]) <= (int)1000 ? sToInt(numbers[i]) : 0);
+			if(sToInt(numbers[i]) < 0) negative.add(sToInt(numbers[i]));
+			val += (sToInt(numbers[i]) <= 1000 ? sToInt(numbers[i]) : 0);
+		}
+		if(negative.size() > 0) {
+			throw new RuntimeException("negative not allowed " + combineNgNumbers(negative));
 		}
 		return val;
 	}
 	
 	
+	private static String combineNgNumbers(ArrayList<Integer> negative) {
+		String ref = "";
+		for(int i=0;i<negative.size();i++) {
+			if(i == negative.size() -1) ref += negative.get(i);
+			else ref += negative.get(i) + ", ";
+		}
+		return ref;
+	}
+
+
 	private static int sToInt(String s) {
 		return Integer.parseInt(s);
 	}
