@@ -21,4 +21,9 @@ public class StringCalcTest {
 		assertEquals(3,StringCalc.Add("1,2"));
 	}
 	
+	@Test
+	public void returnAdditionForAnyAmountOfNumbers() {
+		assertEquals(8,StringCalc.Add("5,2,1"));
+	}
+	
 }
