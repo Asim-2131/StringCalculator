@@ -5,13 +5,13 @@ public class StringCalc {
 		if(s.isEmpty()) return 0;
 		else if(s.length() == 1) return sToInt(s);
 		else{
-			String [] numbers = splitByComma(s);
+			String [] numbers = splitByCommaAndNewLine(s);
 			return additionOfString(numbers);
 		}
 	}
 	
-	public static String[] splitByComma(String s) {
-		return s.split(",");
+	public static String[] splitByCommaAndNewLine(String s) {
+		return s.split(",|\n");
 	}
 	
 	public static int additionOfString(String numbers[]) {

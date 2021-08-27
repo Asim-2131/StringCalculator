@@ -26,4 +26,9 @@ public class StringCalcTest {
 		assertEquals(8,StringCalc.Add("5,2,1"));
 	}
 	
+	@Test
+	public void returnAdditionForNumbersSeparatedByNewLineAndCommaBoth() {
+		assertEquals(8,StringCalc.Add("5,2\n1"));
+	}
+	
 }
