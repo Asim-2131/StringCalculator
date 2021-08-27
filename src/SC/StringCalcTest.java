@@ -31,4 +31,8 @@ public class StringCalcTest {
 		assertEquals(8,StringCalc.Add("5,2\n1"));
 	}
 	
+	@Test
+	public void returnAdditionForDifferentDelemeters() {
+		assertEquals(8,StringCalc.Add("//;\n1;3;4"));
+	}
 }
